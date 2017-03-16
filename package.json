@@ -13,7 +13,7 @@
     "build": "ngc -p tsconfig.json",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
     "test": "tsc && karma start",
-    "install" : "tsc"
+    "install" : "npm run tsc"
   },
   "repository": {
     "type": "git",
