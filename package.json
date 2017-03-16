@@ -10,7 +10,7 @@
     "build-prod": "webpack --config config/webpack.prod.js",
     "build-dev": "webpack --config config/webpack.dev.js",
     "start": "npm run webpack-dev-server",
-    "install": "npm run tsc --quiet && gulp build"
+    "prepublish": "npm run tsc --quiet && gulp build"
   },
   "repository": {
     "type": "git",
