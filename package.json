@@ -12,7 +12,8 @@
     "start": "npm run webpack-dev-server",
     "build": "ngc -p tsconfig.json",
     "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
-    "test": "tsc && karma start"
+    "test": "tsc && karma start",
+    "install" : "tsc"
   },
   "repository": {
     "type": "git",
