@@ -9,7 +9,10 @@
     "webpack-dev-server": "webpack-dev-server --inline",
     "build-prod": "webpack --config config/webpack.prod.js",
     "build-dev": "webpack --config config/webpack.dev.js",
-    "start": "npm run webpack-dev-server"
+    "start": "npm run webpack-dev-server",
+    "build": "ngc -p tsconfig.json",
+    "lint": "tslint --type-check --project tsconfig.json src/**/*.ts",
+    "test": "tsc && karma start"
   },
   "repository": {
     "type": "git",
