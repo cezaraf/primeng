@@ -85,6 +85,8 @@ export class MultiSelect implements OnInit,AfterViewInit,AfterViewChecked,DoChec
     @Input() tabindex: number;
     
     @Input() appendTo: any;
+
+    @Input() dataKey: string;
     
     @ViewChild('container') containerViewChild: ElementRef;
     
@@ -307,11 +309,18 @@ export class MultiSelect implements OnInit,AfterViewInit,AfterViewChecked,DoChec
     
     findLabelByValue(val: any): string {
         let label = null;
-        for(let i = 0; i < this.options.length; i++) {
+        for (let i = 0; i < this.options.length; i++) {
             let option = this.options[i];
-            if(option.value == val) {
-                label = option.label;
-                break; 
+            if (typeof val == 'object' && typeof option.value == 'object' && this.dataKey) {
+                if (option.value[this.dataKey] == val[this.dataKey]) {
+                    label = option.label;
+                    break;
+                }
+            } else {
+                if (option.value == val) {
+                    label = option.label;
+                    break;
+                }
             }
         }
         return label;
